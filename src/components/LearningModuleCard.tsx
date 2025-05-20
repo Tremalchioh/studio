@@ -21,6 +21,8 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
   const router = useRouter(); // Initialize router
 
   useEffect(() => {
+    // This effect ensures that if the module prop changes (e.g. parent re-renders with new data),
+    // the card's internal state updates accordingly.
     setIsBookmarked(module.bookmarked);
     setCurrentProgress(module.progress);
   }, [module.bookmarked, module.progress]);
@@ -29,13 +31,9 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
   const toggleBookmark = (e: React.MouseEvent) => {
     e.stopPropagation(); 
     setIsBookmarked(!isBookmarked);
-    // In a real app, you'd call an API here:
+    // In a real app, you'd call an API here or update global state:
     // await api.updateBookmark(module.id, !isBookmarked);
-    // For now, also update the global dummyModules for some consistency IF this card is on profile page and its bookmarked state changes
-    // This is a hacky way to simulate persistence for the demo
-    const mod = dummyModules.find(m => m.id === module.id);
-    if (mod) mod.bookmarked = !isBookmarked;
-    console.log(`Bookmark for module ${module.id} toggled to ${!isBookmarked}`);
+    console.log(`Visual bookmark for module ${module.id} toggled to ${!isBookmarked}. (Local state only)`);
   };
 
   const handleCardClick = () => {
@@ -105,8 +103,3 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
     </Card>
   );
 }
-
-// Hacky way to make dummyModules accessible for bookmark toggle simulation
-// In a real app, this would be managed by a global state or API
-import { dummyModules } from '@/lib/dummyData';
-
