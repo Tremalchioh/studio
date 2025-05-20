@@ -66,7 +66,7 @@ export default function HomePage() {
           <Link href="/courses">
             <Button variant="outline" className="w-full justify-start text-base py-6 rounded-lg border-primary/50 hover:bg-primary/10">
               <BookOpenText className="mr-3 h-5 w-5 text-primary" />
-              Все уроки
+              Все модули
             </Button>
           </Link>
           <Link href="/history">
@@ -100,4 +100,3 @@ export default function HomePage() {
     </div>
   );
 }
-
