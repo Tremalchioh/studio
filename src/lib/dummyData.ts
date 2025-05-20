@@ -1,0 +1,9 @@
+
+import type { LearningModule } from '@/types';
+
+export const dummyModules: LearningModule[] = [
+  { id: '1', title: 'Tatar Language Basics', description: 'Start your journey with fundamental Tatar phrases, alphabet, and basic grammar rules. This module covers greetings, introductions, numbers, and common expressions. You will also learn the specifics of the Tatar alphabet and its pronunciation.', progress: 25, bookmarked: true, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'language book', lessonsCount: 10, tags: ['Beginner', 'Grammar'] },
+  { id: '2', title: 'Tatar Culture & Traditions', description: 'Explore the rich history, customs, music, and art of the Tatar people. Learn about traditional holidays, clothing, folklore, and the historical significance of various Tatar symbols and practices.', progress: 60, bookmarked: false, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'culture folk art', lessonsCount: 8, tags: ['Culture', 'History'] },
+  { id: '3', title: 'Conversational Tatar', description: 'Practice common dialogues, improve pronunciation, and learn idiomatic expressions for everyday situations. This includes scenarios like shopping, asking for directions, ordering food, and making small talk.', progress: 0, bookmarked: false, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'people talking', lessonsCount: 12, tags: ['Intermediate', 'Speaking'] },
+  { id: '4', title: 'Tatar Cuisine Masterclass', description: 'Learn to cook famous Tatar dishes like çäkçäk, öçpoçmaq, and bäliş. This module provides step-by-step recipes, video tutorials, and information about the cultural context of these delightful foods.', progress: 10, bookmarked: true, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'food cooking', lessonsCount: 5, tags: ['Cooking', 'Culture'] },
+];
