@@ -19,7 +19,7 @@ export default function SubLessonsListPage() {
   if (!module) {
     return (
       <div className="flex flex-col items-center justify-center text-center h-full py-10">
-        <h1 className="text-2xl font-bold mb-2 text-foreground">Модуль не найден</h1>
+        <h1 className="text-2xl font-bold text-foreground">Модуль не найден</h1>
         <p className="text-muted-foreground mb-4">Информация о модуле не найдена.</p>
         <Link href="/courses">
           <Button variant="outline">
@@ -44,7 +44,7 @@ export default function SubLessonsListPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold text-foreground">Уроки модуля: {module.title}</h1>
         <Button variant="outline" size="sm" onClick={() => router.back()}>
           <ArrowLeft className="mr-2 h-4 w-4" /> Назад
@@ -60,10 +60,10 @@ export default function SubLessonsListPage() {
       ) : (
         <div className="space-y-3">
           {module.subLessons.map((subLesson, index) => (
-            <Link 
-              key={subLesson.id} 
+            <Link
+              key={subLesson.id}
               href={`/lessons/${moduleId}/sublessons/${subLesson.id}`}
-              className="block" // Apply styling to the Link itself
+              className="block" 
             >
               <Card className="hover:shadow-lg transition-shadow duration-200 rounded-lg cursor-pointer">
                 <CardContent className="p-4 flex items-center justify-between">
