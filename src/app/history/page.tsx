@@ -1,34 +1,10 @@
 
 import { ScrollText, Library } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link'; // Import Link
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-
-const articles = [
-  {
-    id: '1',
-    title: 'The Origins of the Tatar People',
-    summary: 'A brief overview of the historical ethnogenesis of the Tatars, tracing their roots and early development.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'historical map ancient people',
-    category: 'Early History',
-  },
-  {
-    id: '2',
-    title: 'Sabantuy: The Plow Festival',
-    summary: 'Discover the traditions and significance of Sabantuy, a vibrant summer festival celebrating the end of spring field work.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'folk festival celebration',
-    category: 'Traditions',
-  },
-  {
-    id: '3',
-    title: 'Traditional Tatar Cuisine: A Culinary Journey',
-    summary: 'Explore the delicious world of Tatar food, from savory pastries to sweet desserts, and their cultural importance.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'traditional food spread',
-    category: 'Culture',
-  },
-];
+import { historyArticles } from '@/lib/dummyData'; // Import articles from dummyData
+import { Button } from '@/components/ui/button';
 
 export default function HistoryArticlesPage() {
   return (
@@ -42,7 +18,7 @@ export default function HistoryArticlesPage() {
       </section>
 
       <section className="space-y-6">
-        {articles.map((article) => (
+        {historyArticles.map((article) => (
           <Card key={article.id} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 rounded-xl">
             {article.imageUrl && (
               <div className="relative w-full h-48">
@@ -63,16 +39,17 @@ export default function HistoryArticlesPage() {
             <CardContent>
               <p className="text-sm text-muted-foreground mb-1">{article.category}</p>
               <p className="text-foreground line-clamp-3">{article.summary}</p>
-              {/* In a real app, this would link to a full article page */}
-              <button className="text-sm text-primary hover:underline mt-3 font-medium flex items-center">
-                Read More <ScrollText className="ml-1.5 h-4 w-4" />
-              </button>
+              <Link href={`/history/${article.id}`} passHref legacyBehavior>
+                <a className="text-sm text-primary hover:underline mt-3 font-medium flex items-center">
+                  Read More <ScrollText className="ml-1.5 h-4 w-4" />
+                </a>
+              </Link>
             </CardContent>
           </Card>
         ))}
       </section>
       
-      {articles.length === 0 && (
+      {historyArticles.length === 0 && (
         <div className="text-center py-10">
           <ScrollText className="w-12 h-12 text-muted-foreground mb-4 inline-block" />
           <p className="text-muted-foreground">No articles available yet. Check back soon for enriching content!</p>
