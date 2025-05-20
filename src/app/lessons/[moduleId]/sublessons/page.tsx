@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { dummyModules } from '@/lib/dummyData';
 import type { SubLesson } from '@/types';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card'; // Removed CardHeader, CardTitle as they weren't used here
-import { ArrowLeft, CheckSquare, Square, RadioButton } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { ArrowLeft, CheckSquare, Square, RadioButton, BookOpenText } from 'lucide-react';
 
 export default function SubLessonsListPage() {
   const params = useParams();
@@ -19,11 +19,12 @@ export default function SubLessonsListPage() {
   if (!module) {
     return (
       <div className="flex flex-col items-center justify-center text-center h-full py-10">
+        <BookOpenText className="w-16 h-16 text-primary mb-6" />
         <h1 className="text-2xl font-bold text-foreground">Модуль не найден</h1>
-        <p className="text-muted-foreground mb-4">Информация о модуле не найдена.</p>
+        <p className="text-muted-foreground mb-4">Информация о модуле с ID "{moduleId}" не найдена.</p>
         <Link href="/courses">
           <Button variant="outline">
-            <ArrowLeft className="mr-2 h-4 w-4" /> К списку модулей
+            <ArrowLeft className="mr-2 h-4 w-4" /> К списку всех модулей
           </Button>
         </Link>
       </div>
@@ -42,30 +43,36 @@ export default function SubLessonsListPage() {
     }
   };
 
+  const hasSubLessons = module.subLessons && module.subLessons.length > 0;
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-bold text-foreground">Уроки модуля: {module.title}</h1>
-        <Button variant="outline" size="sm" onClick={() => router.back()}>
-          <ArrowLeft className="mr-2 h-4 w-4" /> Назад
-        </Button>
+        <div>
+          <Button variant="outline" size="sm" onClick={() => router.push(`/lessons/${moduleId}`)} className="mb-2">
+            <ArrowLeft className="mr-2 h-4 w-4" /> К описанию модуля
+          </Button>
+          <h1 className="text-2xl font-bold text-foreground">Уроки модуля: {module.title}</h1>
+        </div>
       </div>
 
-      {(!module.subLessons || module.subLessons.length === 0) ? (
+      {!hasSubLessons ? (
         <Card className="shadow-md rounded-xl">
           <CardContent className="pt-6 text-center">
-            <p className="text-muted-foreground">В этом модуле пока нет уроков. Загляните позже!</p>
+            <BookOpenText className="w-12 h-12 text-muted-foreground mb-4 inline-block" />
+            <p className="text-muted-foreground">В этом модуле пока нет детализированных уроков.</p>
+            <p className="text-sm text-muted-foreground mt-1">Контент скоро появится. Загляните позже!</p>
           </CardContent>
         </Card>
       ) : (
         <div className="space-y-3">
-          {module.subLessons.map((subLesson, index) => (
+          {module.subLessons!.map((subLesson, index) => (
             <Link
               key={subLesson.id}
               href={`/lessons/${moduleId}/sublessons/${subLesson.id}`}
               className="block" 
             >
-              <Card className="hover:shadow-lg transition-shadow duration-200 rounded-lg cursor-pointer">
+              <Card className="hover:shadow-lg transition-shadow duration-200 rounded-lg cursor-pointer group">
                 <CardContent className="p-4 flex items-center justify-between">
                   <div className="flex items-center">
                     <div className="mr-3 text-primary font-semibold">{index + 1}.</div>

@@ -19,11 +19,12 @@ export default function LessonModulePage() {
   if (!module) {
     return (
       <div className="flex flex-col items-center justify-center text-center h-full py-10">
-        <h1 className="text-2xl font-bold mb-2">Модуль не найден</h1>
-        <p className="text-muted-foreground mb-4">Модуль, который вы ищете, не существует.</p>
-        <Link href="/">
+        <BookOpen className="w-16 h-16 text-primary mb-6" />
+        <h1 className="text-2xl font-bold mb-2 text-foreground">Модуль не найден</h1>
+        <p className="text-muted-foreground mb-4">К сожалению, модуль с идентификатором "{moduleId}" не найден.</p>
+        <Link href="/courses">
             <Button variant="outline">
-                <ArrowLeft className="mr-2 h-4 w-4" /> Вернуться на главную
+                <ArrowLeft className="mr-2 h-4 w-4" /> Вернуться ко всем модулям
             </Button>
         </Link>
       </div>
@@ -34,8 +35,13 @@ export default function LessonModulePage() {
     router.push(`/lessons/${moduleId}/sublessons`);
   };
 
+  const hasSubLessons = module.subLessons && module.subLessons.length > 0;
+
   return (
     <div className="space-y-6">
+      <Button variant="outline" size="sm" onClick={() => router.back()} className="mb-4">
+        <ArrowLeft className="mr-2 h-4 w-4" /> Назад
+      </Button>
       <Card className="overflow-hidden shadow-lg rounded-xl">
         {module.imageUrl && (
           <div className="relative w-full h-56 sm:h-64">
@@ -58,8 +64,8 @@ export default function LessonModulePage() {
           <div className="prose prose-sm sm:prose-base max-w-none text-foreground dark:prose-invert prose-p:leading-relaxed prose-headings:text-primary">
             <p className="text-muted-foreground text-sm mb-2">
               {module.tags?.join(' • ')} 
-              {module.subLessons && module.subLessons.length > 0 && ` • ${module.subLessons.length} уроков`}
-              {(!module.subLessons || module.subLessons.length === 0) && module.lessonsCount && ` • ${module.lessonsCount} уроков`}
+              {hasSubLessons && ` • ${module.subLessons?.length} уроков`}
+              {!hasSubLessons && module.lessonsCount && ` • ${module.lessonsCount} уроков (контент скоро появится)`}
             </p>
             <h3 className="text-lg font-semibold mt-4 mb-2 text-primary flex items-center">
               <BookOpen className="w-5 h-5 mr-2" />
@@ -67,16 +73,17 @@ export default function LessonModulePage() {
             </h3>
             <p>{module.description}</p>
             <p className="mt-4">
-              Этот модуль "{module.title}" проведет вас через ключевые понятия и материалы. Каждый модуль разбит на более мелкие уроки для лучшего усвоения.
+              Этот модуль "{module.title}" проведет вас через ключевые понятия и материалы. 
+              {hasSubLessons ? "Каждый модуль разбит на более мелкие уроки для лучшего усвоения." : "Содержание этого модуля скоро будет детализировано по урокам."}
             </p>
-            {(!module.subLessons || module.subLessons.length === 0) && (
+            {!hasSubLessons && (
               <p className="mt-4 text-muted-foreground">
-                Содержание этого модуля скоро появится. Загляните позже!
+                Подробные уроки для этого модуля скоро появятся. Загляните позже!
               </p>
             )}
           </div>
         </CardContent>
-        {module.subLessons && module.subLessons.length > 0 && (
+        {hasSubLessons && (
           <CardFooter>
             <Button 
               size="lg" 

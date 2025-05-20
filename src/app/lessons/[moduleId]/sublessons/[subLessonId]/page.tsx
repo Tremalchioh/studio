@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { dummyModules } from '@/lib/dummyData';
 import type { SubLesson, QuizData, QuizOption } from '@/types';
-import { ArrowLeft, CheckCircle, BookOpen, XCircle } from 'lucide-react';
+import { ArrowLeft, CheckCircle, BookOpen, XCircle, AlertTriangle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import Link from 'next/link';
 import {
@@ -38,21 +38,37 @@ export default function SubLessonPage() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [quizSubmitted, setQuizSubmitted] = useState(false);
 
-  if (!module || !subLesson) {
+  if (!module) {
     return (
       <div className="flex flex-col items-center justify-center text-center h-full py-10">
-        <h1 className="text-2xl font-bold mb-2">Урок не найден</h1>
-        <p className="text-muted-foreground mb-4">Запрошенный урок не существует в данном модуле.</p>
-        <Link href={`/lessons/${moduleId}/sublessons`}>
+        <AlertTriangle className="w-16 h-16 text-destructive mb-6" />
+        <h1 className="text-2xl font-bold mb-2 text-foreground">Модуль не найден</h1>
+        <p className="text-muted-foreground mb-4">Модуль с ID "{moduleId}" не существует.</p>
+        <Link href="/courses">
             <Button variant="outline">
-                <ArrowLeft className="mr-2 h-4 w-4" /> К списку уроков модуля
+                <ArrowLeft className="mr-2 h-4 w-4" /> К списку всех модулей
             </Button>
         </Link>
       </div>
     );
   }
 
-  const quizData = subLesson.quizData; // Quiz data is now specific to the sub-lesson
+  if (!subLesson) {
+    return (
+      <div className="flex flex-col items-center justify-center text-center h-full py-10">
+        <AlertTriangle className="w-16 h-16 text-destructive mb-6" />
+        <h1 className="text-2xl font-bold mb-2 text-foreground">Урок не найден</h1>
+        <p className="text-muted-foreground mb-4">Урок с ID "{subLessonId}" не найден в модуле "{module.title}".</p>
+        <Link href={`/lessons/${moduleId}/sublessons`}>
+            <Button variant="outline">
+                <ArrowLeft className="mr-2 h-4 w-4" /> К списку уроков модуля "{module.title}"
+            </Button>
+        </Link>
+      </div>
+    );
+  }
+  
+  const quizData = subLesson.quizData;
 
   const handleStartQuizClick = () => {
     setSelectedAnswer(null);
@@ -62,7 +78,7 @@ export default function SubLessonPage() {
 
   const handleQuizSubmit = () => {
     if (!selectedAnswer) {
-      // Ideally, use a toast notification here
+      // Ideally, use a toast notification here for better UX
       alert("Пожалуйста, выберите ответ перед отправкой.");
       return;
     }
@@ -73,6 +89,9 @@ export default function SubLessonPage() {
   
   const handleQuizDialogClose = () => {
     setIsQuizDialogOpen(false);
+    // Optionally reset quiz state if dialog is closed before finishing.
+    // setSelectedAnswer(null);
+    // setQuizSubmitted(false);
   }
 
   return (
@@ -105,7 +124,6 @@ export default function SubLessonPage() {
               <BookOpen className="w-5 h-5 mr-2" />
               Материал урока
             </h3>
-            {/* Render lesson content, splitting by newline for paragraphs */}
             {subLesson.lessonContent.split('\\n').map((paragraph, index) => (
               paragraph.trim() && <p key={index}>{paragraph.trim()}</p>
             ))}
