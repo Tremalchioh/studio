@@ -5,7 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { dummyModules } from '@/lib/dummyData';
-import { ArrowLeft, BookOpen, ListChecks } from 'lucide-react';
+import { ArrowLeft, BookOpen, ListChecks, AlertTriangle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import Link from 'next/link';
 
@@ -19,7 +19,7 @@ export default function LessonModulePage() {
   if (!module) {
     return (
       <div className="flex flex-col items-center justify-center text-center h-full py-10">
-        <BookOpen className="w-16 h-16 text-primary mb-6" />
+        <AlertTriangle className="w-16 h-16 text-destructive mb-6" />
         <h1 className="text-2xl font-bold mb-2 text-foreground">Модуль не найден</h1>
         <p className="text-muted-foreground mb-4">К сожалению, модуль с идентификатором "{moduleId}" не найден.</p>
         <Link href="/courses">
@@ -93,6 +93,13 @@ export default function LessonModulePage() {
               <ListChecks className="mr-2 h-5 w-5" />
               Перейти к урокам модуля
             </Button>
+          </CardFooter>
+        )}
+         {!hasSubLessons && (
+          <CardFooter>
+            <p className="text-sm text-muted-foreground w-full text-center">
+              Детализированные уроки для этого модуля скоро будут добавлены.
+            </p>
           </CardFooter>
         )}
       </Card>
