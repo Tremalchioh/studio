@@ -1,11 +1,122 @@
 
-import type { LearningModule } from '@/types';
+import type { LearningModule, HistoryArticle, SubLesson, QuizData } from '@/types';
+
+const chakChakQuiz: QuizData = {
+  question: `Какой основной ингредиент в традиционном татарском десерте "Чак-чак"?`,
+  options: [
+    { id: 'a', text: 'Картофель и лук' },
+    { id: 'b', text: 'Мед и тесто' },
+    { id: 'c', text: 'Рис и мясо' },
+    { id: 'd', text: 'Ягоды и сливки' },
+  ],
+  correctAnswerId: 'b',
+};
+
+const alphabetQuiz: QuizData = {
+  question: 'Сколько букв в современном татарском алфавите на основе кириллицы?',
+  options: [
+    { id: 'a', text: '33 буквы' },
+    { id: 'b', text: '39 букв' },
+    { id: 'c', text: '42 буквы' },
+    { id: 'd', text: '35 букв' },
+  ],
+  correctAnswerId: 'b',
+};
+
+const subLessonsForModule1: SubLesson[] = [
+  {
+    id: '1-1',
+    title: 'Введение в татарский алфавит',
+    status: 'not_started',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'alphabet chart',
+    lessonContent: 'Татарский алфавит основан на кириллице и включает несколько специфических букв для отображения уникальных звуков татарского языка. Изучение алфавита - первый шаг к чтению и письму.',
+    quizPrompt: 'Готовы проверить свои знания об алфавите?',
+    quizData: alphabetQuiz,
+  },
+  {
+    id: '1-2',
+    title: 'Приветствия и знакомства',
+    status: 'not_started',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'people meeting',
+    lessonContent: 'Научитесь основным фразам для приветствия и знакомства на татарском языке. Например, "Исэнмесез!" (Здравствуйте!) и "Минен исемем..." (Меня зовут...).',
+    quizPrompt: 'Как сказать "Здравствуйте!" по-татарски?',
+    quizData: {
+      question: 'Как правильно сказать "Здравствуйте!" на татарском языке?',
+      options: [
+        { id: 'a', text: 'Сау бул' },
+        { id: 'b', text: 'Исэнмесез' },
+        { id: 'c', text: 'Рэхмэт' },
+        { id: 'd', text: 'Гафу итегез' },
+      ],
+      correctAnswerId: 'b',
+    }
+  },
+];
+
+const subLessonsForModule4: SubLesson[] = [
+  {
+    id: '4-1',
+    title: 'Секреты приготовления Чак-Чака',
+    status: 'not_started',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'chak-chak cooking',
+    lessonContent: 'Чак-чак - это знаменитый татарский десерт, который готовится из кусочков теста, обжаренных во фритюре и смешанных с медовым сиропом. Это блюдо является символом гостеприимства и праздника.',
+    quizPrompt: 'Узнайте больше о Чак-Чаке!',
+    quizData: chakChakQuiz,
+  },
+];
+
 
 export const dummyModules: LearningModule[] = [
-  { id: '1', title: 'Основы татарского языка', description: 'Начните свой путь с основных татарских фраз, алфавита и базовых правил грамматики. Этот модуль охватывает приветствия, знакомства, цифры и распространенные выражения. Вы также изучите особенности татарского алфавита и его произношение.', progress: 25, bookmarked: true, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'language book', lessonsCount: 10, tags: ['Начинающий', 'Грамматика'] },
-  { id: '2', title: 'Татарская культура и традиции', description: 'Исследуйте богатую историю, обычаи, музыку и искусство татарского народа. Узнайте о традиционных праздниках, одежде, фольклоре и историческом значении различных татарских символов и практик.', progress: 60, bookmarked: false, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'culture folk art', lessonsCount: 8, tags: ['Культура', 'История'] },
-  { id: '3', title: 'Разговорный татарский', description: 'Практикуйте распространенные диалоги, улучшайте произношение и изучайте идиоматические выражения для повседневных ситуаций. Сюда входят сценарии, такие как покупки, запрос дороги, заказ еды и светская беседа.', progress: 0, bookmarked: false, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'people talking', lessonsCount: 12, tags: ['Средний уровень', 'Разговорная речь'] },
-  { id: '4', title: 'Мастер-класс по татарской кухне', description: 'Научитесь готовить известные татарские блюда, такие как чак-чак, эчпочмак и бэлиш. Этот модуль предоставляет пошаговые рецепты, видеоуроки и информацию о культурном контексте этих восхитительных блюд.', progress: 10, bookmarked: true, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'food cooking', lessonsCount: 5, tags: ['Кулинария', 'Культура'] },
+  { 
+    id: '1', 
+    title: 'Основы татарского языка', 
+    description: 'Начните свой путь с основных татарских фраз, алфавита и базовых правил грамматики. Этот модуль охватывает приветствия, знакомства, цифры и распространенные выражения. Вы также изучите особенности татарского алфавита и его произношение.', 
+    progress: 25, 
+    bookmarked: true, 
+    imageUrl: 'https://placehold.co/600x400.png', 
+    imageHint: 'language book', 
+    lessonsCount: 10, // Это может быть обновлено или удалено
+    tags: ['Начинающий', 'Грамматика'],
+    subLessons: subLessonsForModule1,
+  },
+  { 
+    id: '2', 
+    title: 'Татарская культура и традиции', 
+    description: 'Исследуйте богатую историю, обычаи, музыку и искусство татарского народа. Узнайте о традиционных праздниках, одежде, фольклоре и историческом значении различных татарских символов и практик.', 
+    progress: 60, 
+    bookmarked: false, 
+    imageUrl: 'https://placehold.co/600x400.png', 
+    imageHint: 'culture folk art', 
+    lessonsCount: 8, 
+    tags: ['Культура', 'История'],
+    // subLessons: [] // Можно добавить позже
+  },
+  { 
+    id: '3', 
+    title: 'Разговорный татарский', 
+    description: 'Практикуйте распространенные диалоги, улучшайте произношение и изучайте идиоматические выражения для повседневных ситуаций. Сюда входят сценарии, такие как покупки, запрос дороги, заказ еды и светская беседа.', 
+    progress: 0, 
+    bookmarked: false, 
+    imageUrl: 'https://placehold.co/600x400.png', 
+    imageHint: 'people talking', 
+    lessonsCount: 12, 
+    tags: ['Средний уровень', 'Разговорная речь'] 
+  },
+  { 
+    id: '4', 
+    title: 'Мастер-класс по татарской кухне', 
+    description: 'Научитесь готовить известные татарские блюда, такие как чак-чак, эчпочмак и бэлиш. Этот модуль предоставляет пошаговые рецепты, видеоуроки и информацию о культурном контексте этих восхитительных блюд.', 
+    progress: 10, 
+    bookmarked: true, 
+    imageUrl: 'https://placehold.co/600x400.png', 
+    imageHint: 'food cooking', 
+    lessonsCount: 5, 
+    tags: ['Кулинария', 'Культура'],
+    subLessons: subLessonsForModule4,
+  },
 ];
 
 export interface HistoryArticle {
@@ -15,7 +126,7 @@ export interface HistoryArticle {
   imageUrl: string;
   imageHint?: string;
   category: string;
-  fullContent: string; // Added full content field
+  fullContent: string; 
 }
 
 export const historyArticles: HistoryArticle[] = [
@@ -59,4 +170,3 @@ export const historyArticles: HistoryArticle[] = [
     Супы, такие как токмач (суп-лапша), также распространены. Татарская кухня делает упор на натуральные ингредиенты и традиционные методы приготовления, отражая глубокую связь с землей и богатое кулинарное наследие, передаваемое из поколения в поколение.`,
   },
 ];
-
