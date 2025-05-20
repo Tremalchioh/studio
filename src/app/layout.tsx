@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Zilant Learn',
-  description: 'Interactive learning platform for Tatar language and culture.',
+  description: 'Интерактивная платформа для изучения татарского языка и культуры.',
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground`}>
         <div className="flex flex-col min-h-screen max-w-md mx-auto bg-card shadow-xl overflow-hidden">
           <AppHeader />
@@ -39,3 +39,4 @@ export default function RootLayout({
     </html>
   );
 }
+

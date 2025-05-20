@@ -2,10 +2,10 @@
 import type { LearningModule } from '@/types';
 
 export const dummyModules: LearningModule[] = [
-  { id: '1', title: 'Tatar Language Basics', description: 'Start your journey with fundamental Tatar phrases, alphabet, and basic grammar rules. This module covers greetings, introductions, numbers, and common expressions. You will also learn the specifics of the Tatar alphabet and its pronunciation.', progress: 25, bookmarked: true, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'language book', lessonsCount: 10, tags: ['Beginner', 'Grammar'] },
-  { id: '2', title: 'Tatar Culture & Traditions', description: 'Explore the rich history, customs, music, and art of the Tatar people. Learn about traditional holidays, clothing, folklore, and the historical significance of various Tatar symbols and practices.', progress: 60, bookmarked: false, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'culture folk art', lessonsCount: 8, tags: ['Culture', 'History'] },
-  { id: '3', title: 'Conversational Tatar', description: 'Practice common dialogues, improve pronunciation, and learn idiomatic expressions for everyday situations. This includes scenarios like shopping, asking for directions, ordering food, and making small talk.', progress: 0, bookmarked: false, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'people talking', lessonsCount: 12, tags: ['Intermediate', 'Speaking'] },
-  { id: '4', title: 'Tatar Cuisine Masterclass', description: 'Learn to cook famous Tatar dishes like çäkçäk, öçpoçmaq, and bäliş. This module provides step-by-step recipes, video tutorials, and information about the cultural context of these delightful foods.', progress: 10, bookmarked: true, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'food cooking', lessonsCount: 5, tags: ['Cooking', 'Culture'] },
+  { id: '1', title: 'Основы татарского языка', description: 'Начните свой путь с основных татарских фраз, алфавита и базовых правил грамматики. Этот модуль охватывает приветствия, знакомства, цифры и распространенные выражения. Вы также изучите особенности татарского алфавита и его произношение.', progress: 25, bookmarked: true, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'language book', lessonsCount: 10, tags: ['Начинающий', 'Грамматика'] },
+  { id: '2', title: 'Татарская культура и традиции', description: 'Исследуйте богатую историю, обычаи, музыку и искусство татарского народа. Узнайте о традиционных праздниках, одежде, фольклоре и историческом значении различных татарских символов и практик.', progress: 60, bookmarked: false, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'culture folk art', lessonsCount: 8, tags: ['Культура', 'История'] },
+  { id: '3', title: 'Разговорный татарский', description: 'Практикуйте распространенные диалоги, улучшайте произношение и изучайте идиоматические выражения для повседневных ситуаций. Сюда входят сценарии, такие как покупки, запрос дороги, заказ еды и светская беседа.', progress: 0, bookmarked: false, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'people talking', lessonsCount: 12, tags: ['Средний уровень', 'Разговорная речь'] },
+  { id: '4', title: 'Мастер-класс по татарской кухне', description: 'Научитесь готовить известные татарские блюда, такие как чак-чак, эчпочмак и бэлиш. Этот модуль предоставляет пошаговые рецепты, видеоуроки и информацию о культурном контексте этих восхитительных блюд.', progress: 10, bookmarked: true, imageUrl: 'https://placehold.co/600x400.png', imageHint: 'food cooking', lessonsCount: 5, tags: ['Кулинария', 'Культура'] },
 ];
 
 export interface HistoryArticle {
@@ -21,41 +21,42 @@ export interface HistoryArticle {
 export const historyArticles: HistoryArticle[] = [
   {
     id: '1',
-    title: 'The Origins of the Tatar People',
-    summary: 'A brief overview of the historical ethnogenesis of the Tatars, tracing their roots and early development.',
+    title: 'Происхождение татарского народа',
+    summary: 'Краткий обзор исторического этногенеза татар, прослеживающий их корни и раннее развитие.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'historical map ancient people',
-    category: 'Early History',
-    fullContent: `The Tatar people boast a rich and complex history, with roots intertwining with various Turkic and Mongol tribes that roamed the vast Eurasian steppes.
-    Their ethnogenesis is a subject of ongoing scholarly discussion, but it's widely accepted that the Volga Tatars, the largest group, formed primarily from the Turkic-speaking Bulgars who established the Volga Bulgaria state in the 7th-10th centuries.
-    This state became a significant trading and cultural hub.
-    Later, the Mongol invasion in the 13th century and the subsequent Golden Horde period profoundly influenced the political and cultural landscape, leading to the consolidation of various groups under the "Tatar" ethnonym.
-    Over centuries, distinct Tatar subgroups emerged, each with unique cultural nuances, but all sharing a common linguistic and historical heritage. Understanding these origins is key to appreciating the depth of Tatar culture today.`,
+    category: 'Ранняя история',
+    fullContent: `Татарский народ гордится богатой и сложной историей, корни которой переплетаются с различными тюркскими и монгольскими племенами, кочевавшими по бескрайним евразийским степям.
+    Их этногенез является предметом продолжающихся научных дискуссий, но широко признано, что волжские татары, самая многочисленная группа, сформировались в основном из тюркоязычных булгар, создавших государство Волжская Булгария в VII-X веках.
+    Это государство стало значительным торговым и культурным центром.
+    Позже монгольское нашествие в XIII веке и последующий период Золотой Орды оказали глубокое влияние на политический и культурный ландшафт, что привело к консолидации различных групп под этнонимом «татары».
+    На протяжении веков формировались различные субэтносы татар, каждый со своими уникальными культурными особенностями, но все они разделяют общее языковое и историческое наследие. Понимание этих истоков является ключом к осознанию глубины татарской культуры сегодня.`,
   },
   {
     id: '2',
-    title: 'Sabantuy: The Plow Festival',
-    summary: 'Discover the traditions and significance of Sabantuy, a vibrant summer festival celebrating the end of spring field work.',
+    title: 'Сабантуй: Праздник плуга',
+    summary: 'Откройте для себя традиции и значение Сабантуя, яркого летнего фестиваля, посвященного окончанию весенних полевых работ.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'folk festival celebration',
-    category: 'Traditions',
-    fullContent: `Sabantuy, literally "plow festival" (saban - plow, tuy - festival, holiday), is one of the most beloved and widespread Tatar national holidays.
-    It traditionally marks the completion of spring agricultural work and is celebrated with great enthusiasm in summer.
-    The festival is a vibrant showcase of Tatar culture, featuring traditional sports like koresh (Tatar wrestling), horse racing, and pillar climbing.
-    Music and dance are integral parts of Sabantuy, with lively folk songs and performances. Feasting is also central, with families and communities sharing traditional dishes.
-    Sabantuy is more than just a celebration; it's a way to honor agricultural labor, strengthen community bonds, and pass down cultural heritage to younger generations. It is officially celebrated in Tatarstan and many regions across Russia and internationally where Tatar communities reside.`,
+    category: 'Традиции',
+    fullContent: `Сабантуй, буквально «праздник плуга» (сабан – плуг, туй – праздник), – один из самых любимых и широко распространенных татарских национальных праздников.
+    Традиционно он знаменует завершение весенних сельскохозяйственных работ и с большим энтузиазмом отмечается летом.
+    Фестиваль представляет собой яркую демонстрацию татарской культуры, включая традиционные виды спорта, такие как корэш (татарская борьба), конные скачки и лазание на столб.
+    Музыка и танцы являются неотъемлемой частью Сабантуя, сопровождаясь живыми народными песнями и выступлениями. Угощение также занимает центральное место: семьи и общины делятся традиционными блюдами.
+    Сабантуй – это больше, чем просто праздник; это способ почтить сельскохозяйственный труд, укрепить общественные связи и передать культурное наследие молодому поколению. Он официально отмечается в Татарстане и многих регионах России и за рубежом, где проживают татарские общины.`,
   },
   {
     id: '3',
-    title: 'Traditional Tatar Cuisine: A Culinary Journey',
-    summary: 'Explore the delicious world of Tatar food, from savory pastries to sweet desserts, and their cultural importance.',
+    title: 'Традиционная татарская кухня: кулинарное путешествие',
+    summary: 'Исследуйте восхитительный мир татарской кухни, от сытной выпечки до сладких десертов, и их культурное значение.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'traditional food spread',
-    category: 'Culture',
-    fullContent: `Tatar cuisine is renowned for its hearty, flavorful dishes, heavily influenced by a historically nomadic lifestyle and agricultural traditions.
-    Meat, particularly lamb and beef, plays a significant role, as do dairy products. Dough-based dishes are a hallmark, with a wide variety of pastries, pies, and dumplings.
-    Öçpoçmaq (a triangular pastry filled with meat and potatoes), bäliş (a large, often round pie with a savory filling), and qıstıbí (pan-fried flatbreads with potato or millet filling) are iconic savory dishes.
-    For sweets, çäkçäk (a honey-drenched fried dough dessert) is perhaps the most famous, often served at celebrations.
-    Soups like tokmaç (noodle soup) are also common. Tatar cuisine emphasizes natural ingredients and traditional cooking methods, reflecting a deep connection to the land and a rich culinary heritage passed down through generations.`,
+    category: 'Культура',
+    fullContent: `Татарская кухня славится своими сытными, ароматными блюдами, на которые сильное влияние оказали исторически кочевой образ жизни и сельскохозяйственные традиции.
+    Мясо, особенно баранина и говядина, играет значительную роль, как и молочные продукты. Блюда на основе теста являются визитной карточкой, с большим разнообразием выпечки, пирогов и пельменей.
+    Эчпочмак (треугольная выпечка с мясом и картофелем), бэлиш (большой, часто круглый пирог с сытной начинкой) и кыстыбый (обжаренные на сковороде лепешки с картофельной или пшенной начинкой) – знаковые сытные блюда.
+    Среди сладостей, пожалуй, самым известным является чак-чак (десерт из жареного теста, пропитанный медом), который часто подают на праздники.
+    Супы, такие как токмач (суп-лапша), также распространены. Татарская кухня делает упор на натуральные ингредиенты и традиционные методы приготовления, отражая глубокую связь с землей и богатое кулинарное наследие, передаваемое из поколения в поколение.`,
   },
 ];
+

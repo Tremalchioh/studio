@@ -16,7 +16,7 @@ export default function HomePage() {
       {/* Last Accessed Lesson Section */}
       {lastAccessedModule && (
         <section>
-          <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-3">Continue Learning</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-3">Продолжить обучение</h2>
           <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl">
             {lastAccessedModule.imageUrl && (
               <div className="relative w-full h-40 sm:h-48">
@@ -40,7 +40,7 @@ export default function HomePage() {
               {lastAccessedModule.progress !== undefined && (
                 <div>
                   <div className="flex justify-between text-xs text-muted-foreground mb-1">
-                    <span>Progress</span>
+                    <span>Прогресс</span>
                     <span>{lastAccessedModule.progress}%</span>
                   </div>
                   <Progress value={lastAccessedModule.progress} className="h-2 bg-secondary" indicatorClassName="bg-primary" />
@@ -51,7 +51,7 @@ export default function HomePage() {
               <Link href={`/lessons/${lastAccessedModule.id}`} className="w-full">
                 <Button variant="default" size="sm" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg text-xs sm:text-sm">
                   <PlayCircle className="mr-1.5 h-4 w-4" />
-                  Resume Lesson
+                  Возобновить урок
                 </Button>
               </Link>
             </CardFooter>
@@ -61,24 +61,24 @@ export default function HomePage() {
 
       {/* Navigation Buttons Section */}
       <section>
-        <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">Explore</h2>
+        <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">Исследовать</h2>
         <div className="grid grid-cols-1 gap-3">
           <Link href="/courses">
             <Button variant="outline" className="w-full justify-start text-base py-6 rounded-lg border-primary/50 hover:bg-primary/10">
               <BookOpenText className="mr-3 h-5 w-5 text-primary" />
-              All Lessons
+              Все уроки
             </Button>
           </Link>
           <Link href="/history">
             <Button variant="outline" className="w-full justify-start text-base py-6 rounded-lg border-primary/50 hover:bg-primary/10">
               <History className="mr-3 h-5 w-5 text-primary" />
-              History Articles
+              Исторические статьи
             </Button>
           </Link>
           <Link href="/profile">
             <Button variant="outline" className="w-full justify-start text-base py-6 rounded-lg border-primary/50 hover:bg-primary/10">
               <UserCircle className="mr-3 h-5 w-5 text-primary" />
-              Profile & Bookmarks
+              Профиль и закладки
             </Button>
           </Link>
         </div>
@@ -86,7 +86,7 @@ export default function HomePage() {
       
       {/* Recommended For You - Placeholder using existing modules */}
       <section>
-         <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">Recommended For You</h2>
+         <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">Рекомендовано для вас</h2>
         {dummyModules.slice(1).length > 0 ? ( // Show remaining modules, skipping the "last accessed" one
           <div className="grid grid-cols-1 gap-4 sm:gap-6">
             {dummyModules.slice(1).map(module => (
@@ -94,9 +94,10 @@ export default function HomePage() {
             ))}
           </div>
         ) : (
-           <p className="text-muted-foreground text-center py-8">More recommendations coming soon!</p>
+           <p className="text-muted-foreground text-center py-8">Больше рекомендаций скоро!</p>
         )}
       </section>
     </div>
   );
 }
+

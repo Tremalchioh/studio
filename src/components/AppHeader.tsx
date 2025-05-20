@@ -14,7 +14,7 @@ export default function AppHeader() {
     <header className="bg-primary text-primary-foreground p-4 shadow-md sticky top-0 z-50 w-full">
       <div className="flex items-center justify-start gap-3">
         {!isHomePage ? (
-          <Link href="/" aria-label="Back to Home">
+          <Link href="/" aria-label="Вернуться на главную">
             <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary/80 h-8 w-8">
               <ArrowLeft className="h-6 w-6" />
             </Button>
@@ -30,3 +30,4 @@ export default function AppHeader() {
     </header>
   );
 }
+

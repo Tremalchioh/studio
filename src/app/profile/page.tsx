@@ -41,7 +41,7 @@ export default function ProfilePage() {
     return (
       <div className="flex flex-col items-center justify-center text-center h-full py-10">
         <UserCog className="w-16 h-16 text-primary mb-6 animate-pulse" />
-        <h1 className="text-2xl font-bold mb-2 text-foreground">Loading Profile...</h1>
+        <h1 className="text-2xl font-bold mb-2 text-foreground">Загрузка профиля...</h1>
       </div>
     );
   }
@@ -54,28 +54,28 @@ export default function ProfilePage() {
     )}>
       <section className="text-center">
         <UserCog className="w-20 h-20 text-primary mb-4 inline-block" />
-        <h1 className="text-3xl font-bold mb-2 text-foreground">My Profile</h1>
+        <h1 className="text-3xl font-bold mb-2 text-foreground">Мой профиль</h1>
         <p className="text-muted-foreground max-w-sm mx-auto">
-          Manage your account, track progress, and customize your learning space.
+          Управляйте своим аккаунтом, отслеживайте прогресс и настраивайте свое учебное пространство.
         </p>
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mb-3 text-foreground">Customize Background</h2>
+        <h2 className="text-xl font-semibold mb-3 text-foreground">Настроить фон</h2>
         <div className="flex gap-3 justify-center">
           <Button 
             variant={selectedBackground === 'tyubeteika' ? 'default' : 'outline'} 
             onClick={() => handleBackgroundChange('tyubeteika')}
             className="rounded-lg"
           >
-            <ImageIcon className="mr-2 h-5 w-5" /> Tyubeteika
+            <ImageIcon className="mr-2 h-5 w-5" /> Тюбетейка
           </Button>
           <Button 
             variant={selectedBackground === 'tulip' ? 'default' : 'outline'} 
             onClick={() => handleBackgroundChange('tulip')}
             className="rounded-lg"
           >
-            <Flower2 className="mr-2 h-5 w-5" /> Tulip
+            <Flower2 className="mr-2 h-5 w-5" /> Тюльпан
           </Button>
           {selectedBackground !== 'default' && (
              <Button 
@@ -83,14 +83,14 @@ export default function ProfilePage() {
               onClick={() => handleBackgroundChange('default')}
               className="rounded-lg text-muted-foreground"
             >
-              Reset
+              Сбросить
             </Button>
           )}
         </div>
-        {/* Placeholder for what the background would look like. In a real app, this div's background would change. */}
         { selectedBackground !== 'default' && 
           <p className="text-xs text-center mt-2 text-muted-foreground">
-            Selected: {selectedBackground}. Background applied to profile container. (Styling for actual background image/pattern needs to be added in CSS)
+            Выбран фон: {selectedBackground === 'tyubeteika' ? 'Тюбетейка' : 'Тюльпан'}. 
+            <br/>(Для отображения фона необходимо добавить стили в CSS)
           </p>
         }
       </section>
@@ -98,7 +98,7 @@ export default function ProfilePage() {
       <section>
         <div className="flex items-center mb-4">
           <Bookmark className="w-6 h-6 text-primary mr-3" />
-          <h2 className="text-xl font-semibold text-foreground">My Bookmarks</h2>
+          <h2 className="text-xl font-semibold text-foreground">Мои закладки</h2>
         </div>
         {bookmarkedModules.length > 0 ? (
           <div className="grid grid-cols-1 gap-4 sm:gap-6">
@@ -109,16 +109,17 @@ export default function ProfilePage() {
         ) : (
           <div className="text-center py-8 bg-muted/50 rounded-lg">
             <Bookmark className="w-12 h-12 text-muted-foreground mb-4 inline-block" />
-            <p className="text-muted-foreground">You haven't bookmarked any lessons yet.</p>
-            <p className="text-sm text-muted-foreground mt-1">Explore lessons and tap the bookmark icon to save them here.</p>
+            <p className="text-muted-foreground">Вы еще не добавили ни одного урока в закладки.</p>
+            <p className="text-sm text-muted-foreground mt-1">Изучайте уроки и нажимайте на значок закладки, чтобы сохранить их здесь.</p>
           </div>
         )}
       </section>
       
       {/* Future: Display user stats, settings, etc. */}
       <section className="text-center py-6">
-        <p className="text-muted-foreground">More profile features coming soon!</p>
+        <p className="text-muted-foreground">Больше функций профиля скоро!</p>
       </section>
     </div>
   );
 }
+

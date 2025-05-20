@@ -71,7 +71,7 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
         {currentProgress !== undefined && currentProgress >= 0 && ( // Ensure progress is valid
           <div>
             <div className="flex justify-between text-xs text-muted-foreground mb-1">
-              <span>Progress</span>
+              <span>Прогресс</span>
               <span>{currentProgress}%</span>
             </div>
             <Progress value={currentProgress} className="h-2 bg-secondary" indicatorClassName="bg-primary" />
@@ -89,13 +89,13 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
           }}
         >
           <PlayCircle className="mr-1.5 h-4 w-4" />
-          {currentProgress && currentProgress > 0 ? 'Continue' : 'Start'}
+          {currentProgress && currentProgress > 0 ? 'Продолжить' : 'Начать'}
         </Button>
         <Button 
           variant="ghost" 
           size="icon" 
           onClick={toggleBookmark} 
-          aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
+          aria-label={isBookmarked ? "Удалить закладку" : "Добавить закладку"}
           className="rounded-full text-muted-foreground hover:bg-accent/10 hover:text-accent"
           aria-pressed={isBookmarked}
         >
@@ -109,3 +109,4 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
 // Hacky way to make dummyModules accessible for bookmark toggle simulation
 // In a real app, this would be managed by a global state or API
 import { dummyModules } from '@/lib/dummyData';
+

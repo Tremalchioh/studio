@@ -11,9 +11,9 @@ export default function HistoryArticlesPage() {
     <div className="space-y-8">
       <section className="text-center">
         <Library className="w-16 h-16 text-primary mb-4 inline-block" />
-        <h1 className="text-3xl font-bold mb-2 text-foreground">Tatar History & Culture</h1>
+        <h1 className="text-3xl font-bold mb-2 text-foreground">История и культура татар</h1>
         <p className="text-muted-foreground max-w-md mx-auto">
-          Delve into fascinating articles about the rich history, vibrant culture, and unique traditions of the Tatar people.
+          Погрузитесь в увлекательные статьи о богатой истории, яркой культуре и уникальных традициях татарского народа.
         </p>
       </section>
 
@@ -41,7 +41,7 @@ export default function HistoryArticlesPage() {
               <p className="text-foreground line-clamp-3">{article.summary}</p>
               <Link href={`/history/${article.id}`} passHref legacyBehavior>
                 <a className="text-sm text-primary hover:underline mt-3 font-medium flex items-center">
-                  Read More <ScrollText className="ml-1.5 h-4 w-4" />
+                  Читать далее <ScrollText className="ml-1.5 h-4 w-4" />
                 </a>
               </Link>
             </CardContent>
@@ -52,9 +52,10 @@ export default function HistoryArticlesPage() {
       {historyArticles.length === 0 && (
         <div className="text-center py-10">
           <ScrollText className="w-12 h-12 text-muted-foreground mb-4 inline-block" />
-          <p className="text-muted-foreground">No articles available yet. Check back soon for enriching content!</p>
+          <p className="text-muted-foreground">Статей пока нет. Загляните позже, чтобы найти интересный контент!</p>
         </div>
       )}
     </div>
   );
 }
+

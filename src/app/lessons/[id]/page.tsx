@@ -49,12 +49,12 @@ export default function LessonContentPage() {
 
   // Dummy quiz data - in a real app, this would come from a CMS or be module-specific
   const quizData: QuizData = {
-    question: `What is the primary ingredient in the traditional Tatar sweet "Çäkçäk"?`,
+    question: `Какой основной ингредиент в традиционном татарском десерте "Чак-чак"?`,
     options: [
-      { id: 'a', text: 'Potatoes and Onions' },
-      { id: 'b', text: 'Honey and Dough' },
-      { id: 'c', text: 'Rice and Meat' },
-      { id: 'd', text: 'Berries and Cream' },
+      { id: 'a', text: 'Картофель и лук' },
+      { id: 'b', text: 'Мед и тесто' },
+      { id: 'c', text: 'Рис и мясо' },
+      { id: 'd', text: 'Ягоды и сливки' },
     ],
     correctAnswerId: 'b',
   };
@@ -69,7 +69,7 @@ export default function LessonContentPage() {
   const handleQuizSubmit = () => {
     if (!selectedAnswer) {
       // This should ideally be a toast message
-      alert("Please select an answer before submitting.");
+      alert("Пожалуйста, выберите ответ перед отправкой.");
       return;
     }
     setQuizSubmitted(true);
@@ -84,11 +84,11 @@ export default function LessonContentPage() {
   if (!module) {
     return (
       <div className="flex flex-col items-center justify-center text-center h-full py-10">
-        <h1 className="text-2xl font-bold mb-2">Lesson Not Found</h1>
-        <p className="text-muted-foreground mb-4">The lesson you are looking for does not exist.</p>
+        <h1 className="text-2xl font-bold mb-2">Урок не найден</h1>
+        <p className="text-muted-foreground mb-4">Урок, который вы ищете, не существует.</p>
         <Link href="/">
             <Button variant="outline">
-                <ArrowLeft className="mr-2 h-4 w-4" /> Go Back to Home
+                <ArrowLeft className="mr-2 h-4 w-4" /> Вернуться на главную
             </Button>
         </Link>
       </div>
@@ -118,20 +118,18 @@ export default function LessonContentPage() {
         <CardContent>
           <div className="prose prose-sm sm:prose-base max-w-none text-foreground">
             <p className="text-muted-foreground text-sm mb-1">
-              {module.tags?.join(' • ')} {module.lessonsCount && `• ${module.lessonsCount} lessons`}
+              {module.tags?.join(' • ')} {module.lessonsCount && `• ${module.lessonsCount} уроков`}
             </p>
             <h3 className="text-lg font-semibold mt-4 mb-2 text-primary flex items-center">
               <BookOpen className="w-5 h-5 mr-2" />
-              Lesson Content
+              Содержание урока
             </h3>
             <p>{module.description}</p>
             <p className="mt-4">
-              Welcome to the lesson on "{module.title}". This section will guide you through the key concepts and materials.
-              Make sure to read through all the provided text and examine any supporting images or examples.
+              Добро пожаловать на урок "{module.title}". Этот раздел проведет вас через ключевые понятия и материалы. Обязательно прочтите весь предоставленный текст и изучите все вспомогательные изображения или примеры.
             </p>
             <p>
-              Once you feel comfortable with the material presented here, you can proceed to test your knowledge with a quiz.
-              The quiz will cover the topics discussed in this instructional segment. Good luck!
+              Как только вы освоите представленный здесь материал, вы сможете проверить свои знания с помощью викторины. Викторина будет охватывать темы, рассмотренные в этом учебном разделе. Удачи!
             </p>
           </div>
         </CardContent>
@@ -144,12 +142,12 @@ export default function LessonContentPage() {
                 onClick={handleStartQuizClick} // Reset state before dialog opens
               >
                 <CheckCircle className="mr-2 h-5 w-5" />
-                Start Quiz
+                Начать викторину
               </Button>
             </AlertDialogTrigger>
             <AlertDialogContent className="max-w-md w-[calc(100%-2rem)]"> {/* Ensure it fits mobile nicely */}
               <AlertDialogHeader>
-                <AlertDialogTitle>{module.title} Quiz</AlertDialogTitle>
+                <AlertDialogTitle>Викторина: {module.title}</AlertDialogTitle>
                 <AlertDialogDescription className="text-base text-foreground pt-2">
                   {quizData.question}
                 </AlertDialogDescription>
@@ -208,25 +206,25 @@ export default function LessonContentPage() {
                     : 'bg-red-100 text-red-700 dark:bg-red-800/30 dark:text-red-300'
                 )}>
                   {selectedAnswer === quizData.correctAnswerId
-                    ? 'Correct! Well done.'
-                    : `Incorrect. The correct answer was: "${quizData.options.find(o => o.id === quizData.correctAnswerId)?.text}".`}
+                    ? 'Правильно! Отличная работа.'
+                    : `Неправильно. Правильный ответ: "${quizData.options.find(o => o.id === quizData.correctAnswerId)?.text}".`}
                 </div>
               )}
 
               <AlertDialogFooter className="mt-6">
                 {!quizSubmitted ? (
                   <>
-                    <AlertDialogCancel onClick={handleQuizDialogClose}>Cancel</AlertDialogCancel>
+                    <AlertDialogCancel onClick={handleQuizDialogClose}>Отмена</AlertDialogCancel>
                     <Button
                       onClick={handleQuizSubmit}
                       disabled={!selectedAnswer}
                       className="bg-primary hover:bg-primary/90"
                     >
-                      Submit Answer
+                      Отправить ответ
                     </Button>
                   </>
                 ) : (
-                  <Button onClick={handleQuizDialogClose} className="w-full bg-primary hover:bg-primary/90">Close</Button>
+                  <Button onClick={handleQuizDialogClose} className="w-full bg-primary hover:bg-primary/90">Закрыть</Button>
                 )}
               </AlertDialogFooter>
             </AlertDialogContent>

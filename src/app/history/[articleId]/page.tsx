@@ -19,11 +19,11 @@ export default function ArticleDetailPage() {
   if (!article) {
     return (
       <div className="flex flex-col items-center justify-center text-center h-full py-10">
-        <h1 className="text-2xl font-bold mb-2 text-foreground">Article Not Found</h1>
-        <p className="text-muted-foreground mb-4">The article you are looking for does not exist.</p>
+        <h1 className="text-2xl font-bold mb-2 text-foreground">Статья не найдена</h1>
+        <p className="text-muted-foreground mb-4">Статья, которую вы ищете, не существует.</p>
         <Link href="/history">
           <Button variant="outline">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Articles
+            <ArrowLeft className="mr-2 h-4 w-4" /> Назад к статьям
           </Button>
         </Link>
       </div>
@@ -77,10 +77,11 @@ export default function ArticleDetailPage() {
         <Link href="/history">
           <Button variant="outline" size="lg" className="rounded-lg">
             <ArrowLeft className="mr-2 h-5 w-5" />
-            Back to All Articles
+            Назад ко всем статьям
           </Button>
         </Link>
       </div>
     </div>
   );
 }
+
