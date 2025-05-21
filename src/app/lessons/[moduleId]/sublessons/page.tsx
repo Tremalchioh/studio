@@ -7,7 +7,7 @@ import { dummyModules } from '@/lib/dummyData';
 import type { SubLesson } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, CheckSquare, Square, RadioButton, BookOpenText, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, CheckSquare, Square, Circle, BookOpenText, AlertTriangle } from 'lucide-react';
 
 export default function SubLessonsListPage() {
   const params = useParams();
@@ -54,8 +54,8 @@ export default function SubLessonsListPage() {
     switch (status) {
       case 'completed':
         return <CheckSquare className="h-5 w-5 text-green-500" />;
-      case 'in_progress':
-        return <RadioButton className="h-5 w-5 text-yellow-500 animate-pulse" />;
+      case 'in_progress': // Changed from RadioButton to Circle
+        return <Circle className="h-5 w-5 text-yellow-500 animate-pulse" />;
       case 'not_started':
       default:
         return <Square className="h-5 w-5 text-muted-foreground" />;
@@ -68,9 +68,7 @@ export default function SubLessonsListPage() {
     <div className="space-y-6 p-4"> {/* Added p-4 for consistent padding */}
       <div className="flex items-center justify-between mb-4">
         <div>
-          <Button variant="outline" size="sm" onClick={() => router.push(`/lessons/${moduleId}`)} className="mb-2">
-            <ArrowLeft className="mr-2 h-4 w-4" /> К описанию модуля
-          </Button>
+          {/* The button "К описанию модуля" was here and is now removed. */}
           <h1 className="text-2xl font-bold text-foreground">Уроки модуля: {module.title}</h1>
         </div>
       </div>
@@ -109,3 +107,4 @@ export default function SubLessonsListPage() {
     </div>
   );
 }
+

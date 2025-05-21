@@ -48,7 +48,7 @@ export default function HomePage() {
               )}
             </CardContent>
             <CardFooter className="pt-0 pb-3 px-4 sm:px-6">
-              <Link href={`/lessons/${lastAccessedModule.id}`} className="w-full">
+              <Link href={`/lessons/${lastAccessedModule.id}/sublessons`} className="w-full">
                 <Button variant="default" size="sm" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg text-xs sm:text-sm">
                   <PlayCircle className="mr-1.5 h-4 w-4" />
                   Возобновить урок
