@@ -28,9 +28,18 @@ const nextConfig: NextConfig = {
         hostname: 'realnoevremya.ru',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'rinfom.ru',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
 };
 
 export default nextConfig;
+
+
+    
