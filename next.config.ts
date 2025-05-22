@@ -46,12 +46,15 @@ const nextConfig: NextConfig = {
         hostname: 'cdn.tripster.ru',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ucarecdn.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
 };
 
 export default nextConfig;
-
-
-    
