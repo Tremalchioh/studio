@@ -34,6 +34,12 @@ const nextConfig: NextConfig = {
         hostname: 'rinfom.ru',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'efspb.ru',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
