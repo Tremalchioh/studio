@@ -77,8 +77,8 @@ export const dummyModules: LearningModule[] = [
     progress: 25, 
     bookmarked: true, 
     imageUrl: 'https://avtonomiya.tatar/wp-content/uploads/MfcskgsbPU8.jpg', 
-    imageHint: 'Tatar people', 
-    lessonsCount: 10, // Это может быть обновлено или удалено
+    imageHint: 'Tatar people children', 
+    lessonsCount: 10,
     tags: ['Начинающий', 'Грамматика'],
     subLessons: subLessonsForModule1,
   },
@@ -88,8 +88,8 @@ export const dummyModules: LearningModule[] = [
     description: 'Исследуйте богатую историю, обычаи, музыку и искусство татарского народа. Узнайте о традиционных праздниках, одежде, фольклоре и историческом значении различных татарских символов и практик.', 
     progress: 60, 
     bookmarked: false, 
-    imageUrl: 'https://placehold.co/600x400.png', 
-    imageHint: 'culture folk art', 
+    imageUrl: 'https://realnoevremya.ru/uploads/article/25/68/ad2bb11ea150100a.jpg', 
+    imageHint: 'tatar culture traditional clothes', 
     lessonsCount: 8, 
     tags: ['Культура', 'История'],
     // subLessons: [] // Можно добавить позже
@@ -170,3 +170,4 @@ export const historyArticles: HistoryArticle[] = [
     Супы, такие как токмач (суп-лапша), также распространены. Татарская кухня делает упор на натуральные ингредиенты и традиционные методы приготовления, отражая глубокую связь с землей и богатое кулинарное наследие, передаваемое из поколения в поколение.`,
   },
 ];
+

@@ -22,6 +22,12 @@ const nextConfig: NextConfig = {
         hostname: 'avtonomiya.tatar',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'realnoevremya.ru',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
