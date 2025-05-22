@@ -70,50 +70,50 @@ const subLessonsForModule4: SubLesson[] = [
 
 
 export const dummyModules: LearningModule[] = [
-  { 
-    id: '1', 
-    title: 'Основы татарского языка', 
-    description: 'Начните свой путь с основных татарских фраз, алфавита и базовых правил грамматики. Этот модуль охватывает приветствия, знакомства, цифры и распространенные выражения. Вы также изучите особенности татарского алфавита и его произношение.', 
-    progress: 25, 
-    bookmarked: true, 
-    imageUrl: 'https://avtonomiya.tatar/wp-content/uploads/MfcskgsbPU8.jpg', 
-    imageHint: 'Tatar people children', 
+  {
+    id: '1',
+    title: 'Основы татарского языка',
+    description: 'Начните свой путь с основных татарских фраз, алфавита и базовых правил грамматики. Этот модуль охватывает приветствия, знакомства, цифры и распространенные выражения. Вы также изучите особенности татарского алфавита и его произношение.',
+    progress: 25,
+    bookmarked: true,
+    imageUrl: 'https://avtonomiya.tatar/wp-content/uploads/MfcskgsbPU8.jpg',
+    imageHint: 'Tatar people children',
     lessonsCount: 10,
     tags: ['Начинающий', 'Грамматика'],
     subLessons: subLessonsForModule1,
   },
-  { 
-    id: '2', 
-    title: 'Татарская культура и традиции', 
-    description: 'Исследуйте богатую историю, обычаи, музыку и искусство татарского народа. Узнайте о традиционных праздниках, одежде, фольклоре и историческом значении различных татарских символов и практик.', 
-    progress: 60, 
-    bookmarked: false, 
-    imageUrl: 'https://realnoevremya.ru/uploads/article/25/68/ad2bb11ea150100a.jpg', 
-    imageHint: 'tatar culture traditional clothes', 
-    lessonsCount: 8, 
+  {
+    id: '2',
+    title: 'Татарская культура и традиции',
+    description: 'Исследуйте богатую историю, обычаи, музыку и искусство татарского народа. Узнайте о традиционных праздниках, одежде, фольклоре и историческом значении различных татарских символов и практик.',
+    progress: 60,
+    bookmarked: false,
+    imageUrl: 'https://placehold.co/600x400.png', // Reverted
+    imageHint: 'culture event', // Reverted to a generic hint
+    lessonsCount: 8,
     tags: ['Культура', 'История'],
     // subLessons: [] // Можно добавить позже
   },
-  { 
-    id: '3', 
-    title: 'Разговорный татарский', 
-    description: 'Практикуйте распространенные диалоги, улучшайте произношение и изучайте идиоматические выражения для повседневных ситуаций. Сюда входят сценарии, такие как покупки, запрос дороги, заказ еды и светская беседа.', 
-    progress: 0, 
-    bookmarked: false, 
-    imageUrl: 'https://placehold.co/600x400.png', 
-    imageHint: 'people talking', 
-    lessonsCount: 12, 
-    tags: ['Средний уровень', 'Разговорная речь'] 
+  {
+    id: '3',
+    title: 'Разговорный татарский',
+    description: 'Практикуйте распространенные диалоги, улучшайте произношение и изучайте идиоматические выражения для повседневных ситуаций. Сюда входят сценарии, такие как покупки, запрос дороги, заказ еды и светская беседа.',
+    progress: 0,
+    bookmarked: false,
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'people talking',
+    lessonsCount: 12,
+    tags: ['Средний уровень', 'Разговорная речь']
   },
-  { 
-    id: '4', 
-    title: 'Мастер-класс по татарской кухне', 
-    description: 'Научитесь готовить известные татарские блюда, такие как чак-чак, эчпочмак и бэлиш. Этот модуль предоставляет пошаговые рецепты, видеоуроки и информацию о культурном контексте этих восхитительных блюд.', 
-    progress: 10, 
-    bookmarked: true, 
-    imageUrl: 'https://placehold.co/600x400.png', 
-    imageHint: 'food cooking', 
-    lessonsCount: 5, 
+  {
+    id: '4',
+    title: 'Мастер-класс по татарской кухне',
+    description: 'Научитесь готовить известные татарские блюда, такие как чак-чак, эчпочмак и бэлиш. Этот модуль предоставляет пошаговые рецепты, видеоуроки и информацию о культурном контексте этих восхитительных блюд.',
+    progress: 10,
+    bookmarked: true,
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'food cooking',
+    lessonsCount: 5,
     tags: ['Кулинария', 'Культура'],
     subLessons: subLessonsForModule4,
   },
@@ -126,7 +126,7 @@ export interface HistoryArticle {
   imageUrl: string;
   imageHint?: string;
   category: string;
-  fullContent: string; 
+  fullContent: string;
 }
 
 export const historyArticles: HistoryArticle[] = [
@@ -170,4 +170,3 @@ export const historyArticles: HistoryArticle[] = [
     Супы, такие как токмач (суп-лапша), также распространены. Татарская кухня делает упор на натуральные ингредиенты и традиционные методы приготовления, отражая глубокую связь с землей и богатое кулинарное наследие, передаваемое из поколения в поколение.`,
   },
 ];
-
