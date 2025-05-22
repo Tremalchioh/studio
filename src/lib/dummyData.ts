@@ -76,8 +76,8 @@ export const dummyModules: LearningModule[] = [
     description: 'Начните свой путь с основных татарских фраз, алфавита и базовых правил грамматики. Этот модуль охватывает приветствия, знакомства, цифры и распространенные выражения. Вы также изучите особенности татарского алфавита и его произношение.', 
     progress: 25, 
     bookmarked: true, 
-    imageUrl: 'https://placehold.co/600x400.png', 
-    imageHint: 'language book', 
+    imageUrl: 'https://avtonomiya.tatar/wp-content/uploads/MfcskgsbPU8.jpg', 
+    imageHint: 'Tatar people', 
     lessonsCount: 10, // Это может быть обновлено или удалено
     tags: ['Начинающий', 'Грамматика'],
     subLessons: subLessonsForModule1,
