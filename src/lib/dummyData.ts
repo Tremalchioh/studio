@@ -88,8 +88,8 @@ export const dummyModules: LearningModule[] = [
     description: 'Исследуйте богатую историю, обычаи, музыку и искусство татарского народа. Узнайте о традиционных праздниках, одежде, фольклоре и историческом значении различных татарских символов и практик.',
     progress: 60,
     bookmarked: false,
-    imageUrl: 'https://placehold.co/600x400.png', // Reverted
-    imageHint: 'culture event', // Reverted to a generic hint
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'culture event',
     lessonsCount: 8,
     tags: ['Культура', 'История'],
     // subLessons: [] // Можно добавить позже
@@ -100,8 +100,8 @@ export const dummyModules: LearningModule[] = [
     description: 'Практикуйте распространенные диалоги, улучшайте произношение и изучайте идиоматические выражения для повседневных ситуаций. Сюда входят сценарии, такие как покупки, запрос дороги, заказ еды и светская беседа.',
     progress: 0,
     bookmarked: false,
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'people talking',
+    imageUrl: 'https://realnoevremya.ru/uploads/article/25/68/ad2bb11ea150100a.jpg',
+    imageHint: 'people conversing',
     lessonsCount: 12,
     tags: ['Средний уровень', 'Разговорная речь']
   },
