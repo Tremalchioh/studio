@@ -40,6 +40,12 @@ const nextConfig: NextConfig = {
         hostname: 'efspb.ru',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.tripster.ru',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

@@ -88,8 +88,8 @@ export const dummyModules: LearningModule[] = [
     description: 'Исследуйте богатую историю, обычаи, музыку и искусство татарского народа. Узнайте о традиционных праздниках, одежде, фольклоре и историческом значении различных татарских символов и практик.',
     progress: 60,
     bookmarked: false,
-    imageUrl: 'https://rinfom.ru/images/stories/tatarskaja-kultura.png',
-    imageHint: 'tatar culture symbols',
+    imageUrl: 'https://cdn.tripster.ru/thumbs2/ff922f7c-b020-11ef-af12-6ec068c5a3e8.1220x600.jpeg',
+    imageHint: 'tatar cultural display',
     lessonsCount: 8,
     tags: ['Культура', 'История'],
     // subLessons: [] // Можно добавить позже
@@ -101,7 +101,7 @@ export const dummyModules: LearningModule[] = [
     progress: 0,
     bookmarked: false,
     imageUrl: 'https://realnoevremya.ru/uploads/article/25/68/ad2bb11ea150100a.jpg',
-    imageHint: 'people conversing',
+    imageHint: 'people conversing market',
     lessonsCount: 12,
     tags: ['Средний уровень', 'Разговорная речь']
   },
