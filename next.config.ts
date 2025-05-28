@@ -52,6 +52,12 @@ const nextConfig: NextConfig = {
         hostname: 'ucarecdn.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
