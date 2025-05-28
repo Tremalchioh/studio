@@ -111,7 +111,6 @@ export default function SubLessonPage() {
               style={{ objectFit: 'cover' }}
               className="bg-muted rounded-t-xl"
               data-ai-hint={subLesson.imageHint}
-              priority
             />
           </div>
         )}
@@ -236,3 +235,4 @@ export default function SubLessonPage() {
     </div>
   );
 }
+
