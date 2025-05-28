@@ -88,8 +88,8 @@ const subLessonsForModule1: SubLesson[] = [
     id: '1-5',
     title: 'Основы грамматики: множественное число существительных',
     status: 'not_started',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'tatar grammar plural',
+    imageUrl: 'https://i.pinimg.com/236x/53/39/fd/5339fd820139e80842ad11e46cca50f5.jpg',
+    imageHint: 'tatar grammar plural examples',
     lessonContent: 'Узнайте, как образовывать множественное число татарских существительных. \\nМы рассмотрим основные аффиксы и правила их применения.',
     quizPrompt: 'Проверим, как вы усвоили множественное число?',
     quizData: genericQuizData,
@@ -342,6 +342,8 @@ export const historyArticles: HistoryArticle[] = [
   },
 ];
 
+
+    
 
     
 

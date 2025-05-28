@@ -76,11 +76,19 @@ const nextConfig: NextConfig = {
         hostname: 'papik.pro',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pinimg.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
 };
 
 export default nextConfig;
+
+    
 
     
