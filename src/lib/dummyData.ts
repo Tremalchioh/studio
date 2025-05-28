@@ -187,8 +187,8 @@ const subLessonsForModule1: SubLesson[] = [
     id: '1-14',
     title: 'Падежи 2: Исходный падеж',
     status: 'not_started',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'tatar cases ablative',
+    imageUrl: 'https://i.postimg.cc/c4NHNvnM/2025-05-29-01-50-09.png',
+    imageHint: 'tatar cases ablative diagram',
     lessonContent: 'Продолжаем изучать падежи. На очереди исходный падеж (Чыгыш килеше), отвечающий на вопросы кемнән? (от кого?), нәрсәдән? (от чего? из чего?), кайдан? (откуда?). \\nРассматриваем его аффиксы (-дан/-дән, -тан/-тән, -нан/-нән) и значения.',
     quizPrompt: 'Знаете ли вы исходный падеж?',
     quizData: genericQuizData,
@@ -357,3 +357,6 @@ export const historyArticles: HistoryArticle[] = [
 
     
 
+
+
+    
