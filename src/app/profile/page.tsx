@@ -49,10 +49,10 @@ export default function ProfilePage() {
   return (
     <div className={cn(
       "space-y-8 transition-all duration-500",
-      selectedBackground === 'tyubeteika' ? 'profile-bg-tyubeteika' : '', // These classes would need to be defined in globals.css
+      selectedBackground === 'tyubeteika' ? 'profile-bg-tyubeteika' : '', 
       selectedBackground === 'tulip' ? 'profile-bg-tulip' : ''
     )}>
-      <section className="text-center">
+      <section className="text-center pt-6"> {/* Added pt-6 to give space for background image at top */}
         <UserCog className="w-20 h-20 text-primary mb-4 inline-block" />
         <h1 className="text-3xl font-bold mb-2 text-foreground">Мой профиль</h1>
         <p className="text-muted-foreground max-w-sm mx-auto">
@@ -61,7 +61,7 @@ export default function ProfilePage() {
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mb-3 text-foreground">Настроить фон</h2>
+        <h2 className="text-xl font-semibold mb-3 text-foreground text-center">Настроить фон</h2>
         <div className="flex gap-3 justify-center">
           <Button 
             variant={selectedBackground === 'tyubeteika' ? 'default' : 'outline'} 
@@ -89,8 +89,7 @@ export default function ProfilePage() {
         </div>
         { selectedBackground !== 'default' && 
           <p className="text-xs text-center mt-2 text-muted-foreground">
-            Выбран фон: {selectedBackground === 'tyubeteika' ? 'Тюбетейка' : 'Тюльпан'}. 
-            <br/>(Для отображения фона необходимо добавить стили в CSS)
+            Выбран фон: {selectedBackground === 'tyubeteika' ? 'Тюбетейка' : 'Тюльпан'}.
           </p>
         }
       </section>

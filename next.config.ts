@@ -106,9 +106,22 @@ const nextConfig: NextConfig = {
         hostname: 'histrf.ru', // New domain for "Происхождение татарского народа" article image
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'foni.papik.pro', // For Tyubeteika background
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fsd.multiurok.ru', // For Tulip background
+        port: '',
+        pathname: '/**',
       }
     ],
   },
 };
 
 export default nextConfig;
+

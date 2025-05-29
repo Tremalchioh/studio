@@ -110,3 +110,18 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Profile background image styles */
+.profile-bg-tyubeteika {
+  background-image: url('https://foni.papik.pro/uploads/posts/2024-09/foni-papik-pro-hvpe-p-kartinki-tyubeteika-na-prozrachnom-fone-2.png');
+  background-size: contain; /* 'contain' might be better for an image with transparency to show it fully */
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.profile-bg-tulip {
+  background-image: url('https://fsd.multiurok.ru/html/2016/12/21/s_5859fe740834a/511643_8.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
