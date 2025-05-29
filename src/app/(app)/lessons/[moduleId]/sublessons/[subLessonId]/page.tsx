@@ -132,7 +132,7 @@ export default function SubLessonPage() {
             <AlertDialogTrigger asChild>
               <Button 
                 size="lg" 
-                className="w-full text-accent-foreground rounded-lg text-base" // Removed bg-accent hover:bg-accent/90
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-lg text-base"
                 onClick={handleStartQuizClick}
               >
                 <CheckCircle className="mr-2 h-5 w-5" />
@@ -174,7 +174,7 @@ export default function SubLessonPage() {
                         "focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2",
                         quizSubmitted 
                           ? "cursor-not-allowed opacity-80" 
-                          : "cursor-pointer", // Removed hover:bg-muted/70
+                          : "cursor-pointer hover:bg-muted/70",
                         optionSpecificClass
                       )}
                     >
@@ -212,13 +212,13 @@ export default function SubLessonPage() {
                     <Button
                       onClick={handleQuizSubmit}
                       disabled={!selectedAnswer}
-                      // className="bg-primary hover:bg-primary/90" // hover is handled by default variant now
+                      className="bg-primary hover:bg-primary/90"
                     >
                       Отправить ответ
                     </Button>
                   </>
                 ) : (
-                  <Button onClick={handleQuizDialogClose} className="w-full">Закрыть</Button> // hover is handled by default variant now
+                  <Button onClick={handleQuizDialogClose} className="w-full bg-primary hover:bg-primary/90">Закрыть</Button>
                 )}
               </AlertDialogFooter>
             </AlertDialogContent>

@@ -39,7 +39,7 @@ export default function AppHeader() {
             size="icon" 
             onClick={handleBack} 
             aria-label="Назад"
-            className="text-primary-foreground h-8 w-8" // Removed hover:bg-primary/80
+            className="text-primary-foreground hover:bg-primary/80 h-8 w-8"
           >
             <ArrowLeft className="h-6 w-6" />
           </Button>

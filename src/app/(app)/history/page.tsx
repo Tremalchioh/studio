@@ -19,7 +19,7 @@ export default function HistoryArticlesPage() {
 
       <section className="space-y-6">
         {historyArticles.map((article) => (
-          <Card key={article.id} className="overflow-hidden shadow-md transition-shadow duration-300 rounded-xl"> {/* Removed hover:shadow-lg */}
+          <Card key={article.id} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 rounded-xl">
             {article.imageUrl && (
               <div className="relative w-full h-48">
                 <Image
@@ -40,7 +40,7 @@ export default function HistoryArticlesPage() {
               <p className="text-sm text-muted-foreground mb-1">{article.category}</p>
               <p className="text-foreground line-clamp-3">{article.summary}</p>
               <Link href={`/history/${article.id}`} passHref legacyBehavior>
-                <a className="text-sm text-primary mt-3 font-medium flex items-center"> {/* Removed hover:underline */}
+                <a className="text-sm text-primary hover:underline mt-3 font-medium flex items-center">
                   Читать далее <ScrollText className="ml-1.5 h-4 w-4" />
                 </a>
               </Link>

@@ -29,11 +29,8 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
   const toggleBookmark = (e: React.MouseEvent) => {
     e.stopPropagation(); 
     setIsBookmarked(!isBookmarked);
-    // In a real app, you'd call an API here or update global state:
-    // await api.updateBookmark(module.id, !isBookmarked);
-    // For now, just visually toggle and update the module prop if necessary.
+    // In a real app, you'd call an API here or update global state.
     // This component should not directly mutate dummyData.
-    // module.bookmarked = !isBookmarked; // Avoid direct mutation of props
     console.log(`Visual bookmark for module ${module.id} toggled to ${!isBookmarked}. (Local state only)`);
   };
 
@@ -43,7 +40,7 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
 
   return (
     <Card 
-      className="overflow-hidden shadow-lg transition-all duration-300 rounded-xl cursor-pointer flex flex-col" // Removed hover:shadow-xl
+      className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl cursor-pointer flex flex-col"
       onClick={handleCardClick}
       role="article"
       aria-labelledby={`module-title-${module.id}`}
@@ -81,7 +78,7 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
         <Button 
           variant="default" 
           size="sm" 
-          className="text-primary-foreground rounded-lg text-xs sm:text-sm py-1 px-2 sm:py-2 sm:px-3" // Removed bg-primary hover:bg-primary/90 (handled by default variant)
+          className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg text-xs sm:text-sm py-1 px-2 sm:py-2 sm:px-3" 
           onClick={(e) => { 
             e.stopPropagation(); 
             router.push(`/lessons/view/${module.id}`); 
@@ -95,7 +92,7 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
           size="icon" 
           onClick={toggleBookmark} 
           aria-label={isBookmarked ? "Удалить закладку" : "Добавить закладку"}
-          className="rounded-full text-muted-foreground" // Removed hover:bg-accent/10 hover:text-accent
+          className="rounded-full text-muted-foreground hover:bg-accent/10 hover:text-accent"
           aria-pressed={isBookmarked}
         >
           <Bookmark className={cn("h-5 w-5 transition-colors", isBookmarked ? "fill-accent text-accent" : "")} />
