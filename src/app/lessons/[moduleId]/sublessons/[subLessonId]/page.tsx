@@ -1,5 +1,6 @@
 // This page has been moved to /src/app/(app)/lessons/[moduleId]/sublessons/[subLessonId]/page.tsx
-// This file is kept to resolve routing conflicts and can be deleted if the (app) version is solely used.
-export default function PlaceholderSubLessonPage() {
+// This file is intentionally left to prevent routing conflicts with the old path.
+// It should ideally be deleted if the (app) group version is the sole source of truth.
+export default function OldSubLessonDetailPagePlaceholder() {
   return null;
 }
