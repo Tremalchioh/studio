@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Bookmark, PlayCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation'; // Import useRouter
+import { useRouter } from 'next/navigation'; 
 
 interface LearningModuleCardProps {
   module: LearningModule;
@@ -18,11 +18,9 @@ interface LearningModuleCardProps {
 export default function LearningModuleCard({ module }: LearningModuleCardProps) {
   const [isBookmarked, setIsBookmarked] = useState(module.bookmarked);
   const [currentProgress, setCurrentProgress] = useState(module.progress);
-  const router = useRouter(); // Initialize router
+  const router = useRouter(); 
 
   useEffect(() => {
-    // This effect ensures that if the module prop changes (e.g. parent re-renders with new data),
-    // the card's internal state updates accordingly.
     setIsBookmarked(module.bookmarked);
     setCurrentProgress(module.progress);
   }, [module.bookmarked, module.progress]);
@@ -33,16 +31,19 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
     setIsBookmarked(!isBookmarked);
     // In a real app, you'd call an API here or update global state:
     // await api.updateBookmark(module.id, !isBookmarked);
+    // For now, just visually toggle and update the module prop if necessary.
+    // This component should not directly mutate dummyData.
+    // module.bookmarked = !isBookmarked; // Avoid direct mutation of props
     console.log(`Visual bookmark for module ${module.id} toggled to ${!isBookmarked}. (Local state only)`);
   };
 
   const handleCardClick = () => {
-    router.push(`/lessons/${module.id}`); // Navigate to lesson content page
+    router.push(`/lessons/view/${module.id}`); 
   };
 
   return (
     <Card 
-      className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl cursor-pointer flex flex-col"
+      className="overflow-hidden shadow-lg transition-all duration-300 rounded-xl cursor-pointer flex flex-col" // Removed hover:shadow-xl
       onClick={handleCardClick}
       role="article"
       aria-labelledby={`module-title-${module.id}`}
@@ -66,7 +67,7 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
       </CardHeader>
       <CardContent className="flex-grow pb-3">
         <p className="text-xs sm:text-sm text-muted-foreground mb-3 line-clamp-2">{module.description}</p>
-        {currentProgress !== undefined && currentProgress >= 0 && ( // Ensure progress is valid
+        {currentProgress !== undefined && currentProgress >= 0 && ( 
           <div>
             <div className="flex justify-between text-xs text-muted-foreground mb-1">
               <span>Прогресс</span>
@@ -80,10 +81,10 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
         <Button 
           variant="default" 
           size="sm" 
-          className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg text-xs sm:text-sm py-1 px-2 sm:py-2 sm:px-3"
+          className="text-primary-foreground rounded-lg text-xs sm:text-sm py-1 px-2 sm:py-2 sm:px-3" // Removed bg-primary hover:bg-primary/90 (handled by default variant)
           onClick={(e) => { 
             e.stopPropagation(); 
-            router.push(`/lessons/${module.id}`); // Also navigate on button click
+            router.push(`/lessons/view/${module.id}`); 
           }}
         >
           <PlayCircle className="mr-1.5 h-4 w-4" />
@@ -94,7 +95,7 @@ export default function LearningModuleCard({ module }: LearningModuleCardProps) 
           size="icon" 
           onClick={toggleBookmark} 
           aria-label={isBookmarked ? "Удалить закладку" : "Добавить закладку"}
-          className="rounded-full text-muted-foreground hover:bg-accent/10 hover:text-accent"
+          className="rounded-full text-muted-foreground" // Removed hover:bg-accent/10 hover:text-accent
           aria-pressed={isBookmarked}
         >
           <Bookmark className={cn("h-5 w-5 transition-colors", isBookmarked ? "fill-accent text-accent" : "")} />
