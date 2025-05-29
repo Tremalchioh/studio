@@ -1,6 +1,6 @@
-// This file is intentionally neutralized to prevent routing conflicts.
-// The active page is in /src/app/(app)/lessons/view/[id]/page.tsx
+// This file is a placeholder to prevent routing conflicts.
+// The active page content is managed by the (app) route group.
 
-export default function OldLessonsViewPage() {
+export default function DeprecatedLessonsViewPage() {
   return null;
 }
