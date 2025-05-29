@@ -17,7 +17,7 @@ export default function HomePage() {
       {lastAccessedModule && (
         <section>
           <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-3">Продолжить обучение</h2>
-          <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl">
+          <Card className="overflow-hidden shadow-lg transition-all duration-300 rounded-xl"> {/* Removed hover:shadow-xl */}
             {lastAccessedModule.imageUrl && (
               <div className="relative w-full h-40 sm:h-48">
                 <Image
@@ -49,7 +49,7 @@ export default function HomePage() {
             </CardContent>
             <CardFooter className="pt-0 pb-3 px-4 sm:px-6">
               <Link href={`/lessons/view/${lastAccessedModule.id}`} className="w-full">
-                <Button variant="default" size="sm" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg text-xs sm:text-sm">
+                <Button variant="default" size="sm" className="w-full bg-primary text-primary-foreground rounded-lg text-xs sm:text-sm"> {/* Removed hover:bg-primary/90 */}
                   <PlayCircle className="mr-1.5 h-4 w-4" />
                   Возобновить урок
                 </Button>
@@ -64,19 +64,19 @@ export default function HomePage() {
         <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">Исследовать</h2>
         <div className="grid grid-cols-1 gap-3">
           <Link href="/courses">
-            <Button variant="outline" className="w-full justify-start text-base py-6 rounded-lg border-primary/50 hover:bg-primary/10">
+            <Button variant="outline" className="w-full justify-start text-base py-6 rounded-lg border-primary/50"> {/* Removed hover:bg-primary/10 */}
               <BookOpenText className="mr-3 h-5 w-5 text-primary" />
               Все модули
             </Button>
           </Link>
           <Link href="/history">
-            <Button variant="outline" className="w-full justify-start text-base py-6 rounded-lg border-primary/50 hover:bg-primary/10">
+            <Button variant="outline" className="w-full justify-start text-base py-6 rounded-lg border-primary/50"> {/* Removed hover:bg-primary/10 */}
               <History className="mr-3 h-5 w-5 text-primary" />
               Исторические статьи
             </Button>
           </Link>
           <Link href="/profile">
-            <Button variant="outline" className="w-full justify-start text-base py-6 rounded-lg border-primary/50 hover:bg-primary/10">
+            <Button variant="outline" className="w-full justify-start text-base py-6 rounded-lg border-primary/50"> {/* Removed hover:bg-primary/10 */}
               <UserCircle className="mr-3 h-5 w-5 text-primary" />
               Профиль и закладки
             </Button>

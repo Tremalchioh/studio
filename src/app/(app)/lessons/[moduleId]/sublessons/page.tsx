@@ -86,11 +86,11 @@ export default function SubLessonsListPage() {
               href={`/lessons/${moduleId}/sublessons/${subLesson.id}`}
               className="block" 
             >
-              <Card className="transition-shadow duration-200 hover:shadow-lg rounded-lg cursor-pointer group">
+              <Card className="transition-shadow duration-200 rounded-lg cursor-pointer group"> {/* Removed hover:shadow-lg */}
                 <CardContent className="p-4 flex items-center justify-between">
                   <div className="flex items-center">
                     <div className="mr-3 text-primary font-semibold">{index + 1}.</div>
-                    <h3 className="text-md font-medium text-foreground group-hover:text-primary">
+                    <h3 className="text-md font-medium text-foreground"> {/* Removed group-hover:text-primary */}
                       {subLesson.title}
                     </h3>
                   </div>
