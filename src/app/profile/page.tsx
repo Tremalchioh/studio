@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { UserCog, Bookmark, Image as ImageIcon, Flower2 } from 'lucide-react';
+import { Bookmark, Image as ImageIcon, Flower2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LearningModuleCard from '@/components/LearningModuleCard';
 import { dummyModules } from '@/lib/dummyData'; // Assuming dummyModules are moved here
@@ -40,30 +40,28 @@ export default function ProfilePage() {
   if (!mounted) {
     return (
       <div className="flex flex-col items-center justify-center text-center h-full py-10">
-        <UserCog className="w-16 h-16 text-primary mb-6 animate-pulse" />
+        {/* Removed UserCog animate-pulse for cleaner loading state */}
         <h1 className="text-2xl font-bold mb-2 text-foreground">Загрузка профиля...</h1>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6"> {/* Removed transition and background classes from here */}
-      {/* Dedicated div for background image */}
+    <div className="space-y-6"> 
       <div
         className={cn(
-          "w-full h-52 rounded-lg transition-all duration-500", // Increased height
+          "w-full h-52 rounded-lg transition-all duration-500", 
           selectedBackground === 'tyubeteika' ? 'profile-bg-tyubeteika' : '', 
           selectedBackground === 'tulip' ? 'profile-bg-tulip' : '',
-          selectedBackground === 'default' ? 'bg-muted/50' : 'bg-card' // Default or card bg
+          selectedBackground === 'default' ? 'bg-muted/50' : 'bg-card' 
         )}
-        aria-hidden="true" // Decorative
+        aria-hidden="true" 
       >
-        {/* This div is intentionally empty if it's just for background */}
       </div>
 
-      <section className="text-center -mt-20 relative z-10"> {/* Adjust margin to overlap or position user info */}
-        <UserCog className="w-20 h-20 text-primary mb-3 inline-block" />
-        <h1 className="text-3xl font-bold mb-1 text-foreground">Мой профиль</h1>
+      <section className="text-center -mt-16 relative z-10"> {/* Adjusted margin, UserCog was -mt-20 */}
+        {/* UserCog icon removed from here */}
+        <h1 className="text-3xl font-bold mb-1 text-foreground pt-4">Мой профиль</h1> {/* Added pt-4 for spacing after removing icon */}
         <p className="text-muted-foreground max-w-sm mx-auto text-sm">
           Управляйте своим аккаунтом, отслеживайте прогресс и настраивайте свое учебное пространство.
         </p>
