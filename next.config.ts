@@ -97,7 +97,13 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'tatarica.org', // New domain for "Происхождение татарского народа" article image
+        hostname: 'tatarica.org', 
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'histrf.ru', // New domain for "Происхождение татарского народа" article image
         port: '',
         pathname: '/**',
       }
@@ -106,9 +112,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-
-    
-
-    
-
-    
