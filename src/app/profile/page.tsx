@@ -47,20 +47,29 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className={cn(
-      "space-y-8 transition-all duration-500",
-      selectedBackground === 'tyubeteika' ? 'profile-bg-tyubeteika' : '', 
-      selectedBackground === 'tulip' ? 'profile-bg-tulip' : ''
-    )}>
-      <section className="text-center pt-6"> {/* Added pt-6 to give space for background image at top */}
-        <UserCog className="w-20 h-20 text-primary mb-4 inline-block" />
-        <h1 className="text-3xl font-bold mb-2 text-foreground">Мой профиль</h1>
-        <p className="text-muted-foreground max-w-sm mx-auto">
+    <div className="space-y-6"> {/* Removed transition and background classes from here */}
+      {/* Dedicated div for background image */}
+      <div
+        className={cn(
+          "w-full h-52 rounded-lg transition-all duration-500", // Increased height
+          selectedBackground === 'tyubeteika' ? 'profile-bg-tyubeteika' : '', 
+          selectedBackground === 'tulip' ? 'profile-bg-tulip' : '',
+          selectedBackground === 'default' ? 'bg-muted/50' : 'bg-card' // Default or card bg
+        )}
+        aria-hidden="true" // Decorative
+      >
+        {/* This div is intentionally empty if it's just for background */}
+      </div>
+
+      <section className="text-center -mt-20 relative z-10"> {/* Adjust margin to overlap or position user info */}
+        <UserCog className="w-20 h-20 text-primary mb-3 inline-block bg-card p-2 rounded-full shadow-lg" />
+        <h1 className="text-3xl font-bold mb-1 text-foreground">Мой профиль</h1>
+        <p className="text-muted-foreground max-w-sm mx-auto text-sm">
           Управляйте своим аккаунтом, отслеживайте прогресс и настраивайте свое учебное пространство.
         </p>
       </section>
 
-      <section>
+      <section className="relative z-10">
         <h2 className="text-xl font-semibold mb-3 text-foreground text-center">Настроить фон</h2>
         <div className="flex gap-3 justify-center">
           <Button 
@@ -94,7 +103,7 @@ export default function ProfilePage() {
         }
       </section>
 
-      <section>
+      <section className="relative z-10">
         <div className="flex items-center mb-4">
           <Bookmark className="w-6 h-6 text-primary mr-3" />
           <h2 className="text-xl font-semibold text-foreground">Мои закладки</h2>
@@ -114,11 +123,9 @@ export default function ProfilePage() {
         )}
       </section>
       
-      {/* Future: Display user stats, settings, etc. */}
-      <section className="text-center py-6">
+      <section className="text-center py-6 relative z-10">
         <p className="text-muted-foreground">Больше функций профиля скоро!</p>
       </section>
     </div>
   );
 }
-
