@@ -88,11 +88,19 @@ const nextConfig: NextConfig = {
         hostname: 'i.postimg.cc', // New domain for the 9th lesson image
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'glazovlib.ru', // New domain for Sabantuy article image
+        port: '',
+        pathname: '/**',
       }
     ],
   },
 };
 
 export default nextConfig;
+
+    
 
     
