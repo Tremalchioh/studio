@@ -62,7 +62,7 @@ export default function ProfilePage() {
       </div>
 
       <section className="text-center -mt-20 relative z-10"> {/* Adjust margin to overlap or position user info */}
-        <UserCog className="w-20 h-20 text-primary mb-3 inline-block bg-card p-2 rounded-full shadow-lg" />
+        <UserCog className="w-20 h-20 text-primary mb-3 inline-block" />
         <h1 className="text-3xl font-bold mb-1 text-foreground">Мой профиль</h1>
         <p className="text-muted-foreground max-w-sm mx-auto text-sm">
           Управляйте своим аккаунтом, отслеживайте прогресс и настраивайте свое учебное пространство.
