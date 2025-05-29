@@ -94,12 +94,20 @@ const nextConfig: NextConfig = {
         hostname: 'glazovlib.ru', // New domain for Sabantuy article image
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'tatarica.org', // New domain for "Происхождение татарского народа" article image
+        port: '',
+        pathname: '/**',
       }
     ],
   },
 };
 
 export default nextConfig;
+
+    
 
     
 
